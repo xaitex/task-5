@@ -1,0 +1,38 @@
+def main():
+    phone_book = {
+        "Коваленко": "050-123-4567",
+        "Петренко": "067-234-5678",
+        "Шевченко": "063-345-6789",
+        "Бондаренко": "095-456-7890",
+        "Кравченко": "066-567-8901",
+        "Олійник": "093-678-9012",
+        "Ткаченко": "096-789-0123",
+        "Мельник": "097-890-1234",
+        "Гриценко": "098-901-2345",
+        "Лисенко": "099-012-3456"
+    }
+    
+    print("Телефонний довідник:")
+    for name, phone in phone_book.items():
+        print(f"{name}: {phone}")
+    
+    print("\n--- Пошук за прізвищем ---")
+    search_name = input("Введіть прізвище: ")
+    if search_name in phone_book:
+        print(f"Номер телефону для {search_name}: {phone_book[search_name]}")
+    else:
+        print(f"{search_name} не знайдено в довіднику")
+    
+    print("\n--- Пошук за номером телефону ---")
+    search_phone = input("Введіть номер телефону: ")
+    found = False
+    for name, phone in phone_book.items():
+        if phone == search_phone:
+            print(f"Номер телефону {search_phone} належить {name}")
+            found = True
+            break
+    
+    if not found:
+        print(f"Номер телефону {search_phone} не знайдено в довіднику")
+
+main()
